@@ -1,0 +1,3 @@
+Text: The food was tasty but it should be less salty 
+
+Sentiment Analysis: neutral 

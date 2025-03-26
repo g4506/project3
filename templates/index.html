@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Audio File</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: #007bff; }
+        .container { max-width: 600px; margin: auto; }
+        .file-list { list-style: none; padding: 0; }
+        .file-list li { margin: 10px 0; }
+        .file-list a { text-decoration: none; color: #007bff; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Available Audio Files</h1>
+        <ul class="file-list">
+            {% for file in files %}
+                <li>
+                    <a href="{{ url_for('process', file=file) }}">{{ file }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

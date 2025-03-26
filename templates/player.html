@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcription & Sentiment Analysis</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: #007bff; }
+        .container { max-width: 600px; margin: auto; }
+        .result { background: #f8f9fa; padding: 15px; border-radius: 5px; margin-top: 10px; }
+        audio { width: 100%; margin-top: 10px; }
+        .back { margin-top: 20px; display: inline-block; text-decoration: none; color: #007bff; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Audio Playback & Analysis</h1>
+
+        <h3>Playing: {{ audio_file }}</h3>
+        <audio controls>
+            <source src="{{ url_for('uploaded_file', filename=audio_file) }}" type="audio/wav">
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>Analysis:</h3>
+        <div class="result">
+            <pre>{{ transcription }}</pre>
+        </div>
+
+        <a href="/" class="back">⬅ Back to Files</a>
+    </div>
+</body>
+</html>
